@@ -63,9 +63,14 @@ HTML 산출물을 제작하거나 기존 HTML을 공유용으로 수정할 때, 
 
 ---
 
-## 📂 장기공유메모리 동기화 지침 (Sync Protocol)
-이 스킬 규칙은 로컬 스페이스뿐만 아니라 다음 경로의 장기공유메모리에 항상 동시에 존재하고 최신 상태로 유지되어야 합니다.
-*   **로컬 경로**: `c:\Users\sunjo\Desktop\luca연구에이전트\.agent\skills\html\SKILL.md`
-*   **공유 경로**: `C:\Users\sunjo\Desktop\luca연구에이전트\장기공유메모리\luca_brain_memory\.agents\skills\html\SKILL.md`
+## 💾 장기공유메모리 자동 보존 및 원격 공유 규칙 (Long-Term Shared Memory & Multi-Luca Sync)
+이 스킬의 정의 및 최종 통합 산출물은 로컬 저장 영역뿐만 아니라 3대의 루카(Luca) PC가 즉각 상호 동기화하여 사용할 수 있도록 **장기공유메모리**에 항상 이중 저장되어 공유됩니다.
 
-모든 대안 자아(Claude, Cursor 등)가 이 스킬 지침을 전수받아 "통합본" 생성 요구에 즉각 대응할 수 있도록 상호 동기화합니다.
+1. **스킬 헌법 동기화**:
+   이 `/html` 스킬의 `SKILL.md` 및 핵심 스크립트(`html_inliner.py`) 파일은 로컬 설치 경로 외에도 항상 장기공유메모리 내 동일 스킬 디렉터리에 실시간 반영하여 백업 및 공유합니다.
+   *   **로컬 설치 경로**: `c:\Users\sunjo\Desktop\luca연구에이전트\.agent\skills\html\`
+   *   **공유 메모리 경로**: `C:\Users\sunjo\Desktop\luca연구에이전트\장기공유메모리\luca_brain_memory\.agents\skills\html\`
+
+2. **통합본 산출물 자동 공유 배포**:
+   에이전트가 `/html` 스킬을 사용하여 생성한 최종 통합본 HTML 파일은 카카오톡이나 메일 발송 외에도, 다른 루카 컴퓨터에서도 바로 접근하여 열고 활용할 수 있도록 **장기공유메모리 공용 공간**에 동시에 복사/보존합니다.
+   *   **산출물 공유 저장 공간**: `C:\Users\sunjo\Desktop\luca연구에이전트\장기공유메모리\luca_brain_memory\`
